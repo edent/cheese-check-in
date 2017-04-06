@@ -1,6 +1,5 @@
 <?php
 session_start();
-?><?php
 	//	Setup for HybridAuth
 	$config = dirname(__FILE__) . '/hybridauth-2.9.1/hybridauth/config.php';
 	require_once( "hybridauth-2.9.1/hybridauth/Hybrid/Auth.php" );
@@ -8,7 +7,7 @@ session_start();
 	function insert_user($tw_name,$tw_id)
 	{
 		//	Connect to the Database
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -40,7 +39,7 @@ session_start();
 		//	Get the GUID for the user
 		$user_id = get_user($tw_id);
 		//	Connect to the Database
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -60,7 +59,7 @@ session_start();
 	function get_user($tw_id)
 	{
 		//	Connect to the Database
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -81,7 +80,7 @@ session_start();
 	function get_cheese($cheese_id)
 	{
 		//	Connect to the Database
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -117,7 +116,7 @@ session_start();
 	}
 
 	function get_cheese_list() {
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
@@ -134,7 +133,7 @@ session_start();
 
 	function get_previous($tw_id) {
 		$user = get_user($tw_id);
-		$mysqli = new mysqli("10.169.0.141", "cheeser", "password", "CHEESE");
+		$mysqli = new mysqli("localhost", "cheeser", "password", "CHEESE");
 		if ($mysqli->connect_errno) {
 		    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 		}
